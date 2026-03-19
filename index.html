@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1 год отношений — квест воспоминаний</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="assets/icon/Heart.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/Heart.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/Heart.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon/Heart.svg">
+  </head>
+  <body>
+    <div id="intro" class="intro" aria-hidden="false">
+      <div class="intro__rain" id="rain" aria-hidden="true"></div>
+    </div>
+
+    <main id="main" class="main" aria-hidden="true">
+      <div id="stack" class="stack">
+      <section id="hero" class="hero" aria-label="Приветствие">
+        <div class="hero__card">
+          <h1 class="hero__title">Квест по воспоминаниям</h1>
+          <h2 class="hero__headline">Привет!</h2>
+          <p class="hero__subtitle">
+            Добро пожаловать на маленький квест по нашим воспоминаниям — впереди будут
+            задания, подсказки и сюрпризы.
+          </p>
+
+          <button class="hero__cta" type="button">ПОЛЕТЕЛИ</button>
+        </div>
+      </section>
+
+      <section id="quest" class="quest" aria-label="Экран 2: начало квеста">
+        <div class="quest__confetti" id="confetti" aria-hidden="true"></div>
+
+        <div class="quest__wrap" id="task1Card">
+          <h2 class="quest__title">Задание номер 1</h2>
+          <div class="quest__text">
+            <p class="quest__p">Реши данный пример</p>
+            <p class="quest__formula">
+              (8−1)×((10+15)×(2+2))+(2+2)×5−1+(123−123)×456−(789−789)÷1=?
+            </p>
+            <p class="quest__p">
+              Решила? Превосходно! Теперь поставь между цифрами правильно точку и впиши внизу
+            </p>
+          </div>
+
+          <form class="quest__form" id="task1Form" autocomplete="off">
+            <label class="quest__label" for="task1Answer">Ответ</label>
+            <input
+              class="quest__input"
+              id="task1Answer"
+              name="answer"
+              inputmode="decimal"
+            />
+            <p class="quest__note">К примеру 2.10 или 10.2</p>
+            <button class="quest__btn" type="submit">Проверить</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="quest2" class="quest" aria-label="Экран 3: продолжение">
+        <div class="quest__confetti" id="confetti2" aria-hidden="true"></div>
+
+        <div class="quest__wrap" id="task2Card">
+          <h2 class="quest__title">Задание номер 2</h2>
+          <div class="quest__text">
+            <p class="quest__p">
+              Найди ту самую фотографию, которая безумно тебе нравиться и где есть вы оба.
+              Покажи своему любимому и тогда он даст тебе пароль на следующее задание
+            </p>
+          </div>
+
+          <form class="quest__form" id="task2Form" autocomplete="off">
+            <label class="quest__label" for="task2Answer">Пароль</label>
+
+            <input
+              class="quest__input quest__input--hidden"
+              id="task2Answer"
+              name="answer"
+              inputmode="numeric"
+              autocomplete="one-time-code"
+            />
+
+            <div class="safe" aria-label="Панель сейфа">
+              <div class="safe__display" id="safeDisplay" aria-live="polite">••••</div>
+              <div class="safe__grid" id="safeKeys" aria-label="Кнопки ввода пароля">
+                <button class="safe__key" type="button" data-key="1">1</button>
+                <button class="safe__key" type="button" data-key="2">2</button>
+                <button class="safe__key" type="button" data-key="3">3</button>
+                <button class="safe__key" type="button" data-key="4">4</button>
+                <button class="safe__key" type="button" data-key="5">5</button>
+                <button class="safe__key" type="button" data-key="6">6</button>
+                <button class="safe__key" type="button" data-key="7">7</button>
+                <button class="safe__key" type="button" data-key="8">8</button>
+                <button class="safe__key" type="button" data-key="9">9</button>
+                <button class="safe__key safe__key--util" type="button" data-action="clear">
+                  C
+                </button>
+                <button class="safe__key" type="button" data-key="0">0</button>
+                <button class="safe__key safe__key--util" type="button" data-action="back">
+                  ←
+                </button>
+              </div>
+            </div>
+
+            <button class="quest__btn" type="submit">Проверить</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="break" class="quest" aria-label="Перерыв">
+        <div class="quest__wrap">
+          <h2 class="quest__title">Перерыв</h2>
+          <p class="quest__text">
+            А пока перерыв, давай посмотрим небольшой трейлер к фильму.
+          </p>
+          <div class="break__video">
+            <video class="break__player" controls preload="metadata">
+              <!-- Загрузи видео в папку assets и назови, например, break.mp4 -->
+              <source src="assets/VideoPresent.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <button class="quest__btn" type="button" id="breakContinue">Дальше</button>
+        </div>
+      </section>
+
+      <section id="quest3" class="quest" aria-label="Экран 4: поиск слов">
+        <div class="quest__confetti" id="confetti3" aria-hidden="true"></div>
+        <div class="quest__wrap" id="task3Card">
+          <h2 class="quest__title">Задание номер 3</h2>
+          <div class="quest__text">
+            <p class="quest__p">
+              Перед тобой поле с буквами. В нём спрятаны наши слова — найди их все.
+            </p>
+          </div>
+
+          <div
+            class="crossword"
+            id="crossword"
+            aria-label="Поле букв для поиска слов"
+          ></div>
+
+          <div class="crossword__words">
+            <ul class="crossword__list" id="wordList"></ul>
+          </div>
+
+          <form class="quest__form" id="task3Form" autocomplete="off">
+            <label class="quest__label" for="task3Answer">Введи найденное слово</label>
+            <input
+              class="quest__input"
+              id="task3Answer"
+              name="answer"
+              placeholder="Например: любовь"
+            />
+            <p class="quest__note">
+              Найди 10 слов и впиши их в форму.
+            </p>
+            <button class="quest__btn" type="submit">Проверить слово</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="quest4" class="quest" aria-label="Экран 5: слайд-шоу">
+        <div class="quest__wrap">
+          <h2 class="quest__title">Задание номер 4</h2>
+          <p class="quest__text">
+            Сейчас по очереди будут появляться места, где мы были вместе. 
+            Нажимай «Дальше», чтобы пролистать их все.
+          </p>
+          <div class="final">
+            <div class="final__frame">
+              <img
+                class="final__image"
+                id="finalImage"
+                src=""
+                alt="Наш момент"
+              />
+            </div>
+            <button class="quest__btn" type="button" id="finalNext">Дальше</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="quest5" class="quest" aria-label="Экран 6: поздравление">
+        <div class="quest__wrap">
+          <h2 class="quest__title">Поздравляю! Ты прошла квест!</h2>
+          <p class="quest__text">
+            Ты прошла весь квест. Спасибо за этот год, за наши моменты и за то, что ты рядом.
+          </p>
+          <button class="quest__btn" type="button" id="claimPrize">Забрать приз!</button>
+        </div>
+      </section>
+
+      <section id="prize" class="prize" aria-label="Приз">
+        <div class="prize__row prize__row--ltr">
+          <div class="prize__track">
+            <img class="prize__img" src="assets/photos/prize/prize-01.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-02.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-03.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-04.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-05.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-06.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-07.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-08.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-09.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-10.jpg" alt="" />
+            <!-- дубль для бесшовной прокрутки -->
+            <img class="prize__img" src="assets/photos/prize/prize-01.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-02.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-03.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-04.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-05.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-06.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-07.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-08.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-09.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-10.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="prize__row prize__row--rtl">
+          <div class="prize__track">
+            <img class="prize__img" src="assets/photos/prize/prize-11.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-12.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-13.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-14.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-15.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-16.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-17.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-18.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-19.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-20.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-11.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-12.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-13.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-14.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-15.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-16.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-17.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-18.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-19.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-20.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="prize__row prize__row--ltr">
+          <div class="prize__track">
+            <img class="prize__img" src="assets/photos/prize/prize-21.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-22.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-23.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-24.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-25.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-26.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-27.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-28.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-29.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-30.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-21.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-22.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-23.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-24.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-25.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-26.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-27.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-28.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-29.jpg" alt="" />
+            <img class="prize__img" src="assets/photos/prize/prize-30.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
